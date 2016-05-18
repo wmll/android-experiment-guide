@@ -185,8 +185,49 @@
 
 ```
 ###3. 制作练练看游戏界面
-简要说明……  
-详细步骤……  
+简要说明:我这个海贼王连连看游戏界面布局是由Net1314080903126main.xml通过调用三个java文件Net1314080903126CtrlView.java Net1314080903126GameView.java  Net1314080903126OnePieceGame.java 来显示主界面以及玩游戏的规则和游戏实现的。
+
+详细步骤：
+1.  这是Net1314080903126main.xml全部的代码，先大概解释一下流程。
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	 	android:layout_width="fill_parent"	android:layout_height="wrap_content">
+	 	<TableRow>
+			<ProgressBar android:id="@+id/pb" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" style="?android:attr/progressBarStyleHorizontal" 
+				android:layout_weight="9"/>
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:text="@string/remain_time" android:layout_weight="1"/>
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:id="@+id/show_remainTime" android:layout_weight="1"/>	
+		</TableRow>
+	</TableLayout>
+	
+	<edu.hzuapps.androidworks.homeworks.net1314080903126.Net1314080903126CtrlView
+		android:id="@+id/cv"
+		android:layout_width="wrap_content" android:layout_height="fill_parent" />
+</LinearLayout>
+
+其中：<edu.hzuapps.androidworks.homeworks.net1314080903126.Net1314080903126CtrlView
+		android:id="@+id/cv"
+		android:layout_width="wrap_content" android:layout_height="fill_parent" />
+		这是连连看界面的人物显示界面以及人物的排列分布显示等；
+然后：<TableRow>
+			<ProgressBar android:id="@+id/pb" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" style="?android:attr/progressBarStyleHorizontal" 
+				android:layout_weight="9"/>
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:text="@string/remain_time" android:layout_weight="1"/>
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:id="@+id/show_remainTime" android:layout_weight="1"/>	
+		</TableRow>
+		这是连连看界面显示时间秒数的进度条 和 剩余时间（秒）以及 300秒的时间倒计时。
+		主界面的大概显示就是这样！
+2. 
+
 
 ###4. 制作扫雷游戏界面
 简要说明……  
